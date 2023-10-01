@@ -49,12 +49,14 @@ body {
 
 .sidebar .nav > div:hover {
     cursor: pointer;
+    color: rgb(227, 227, 227);
+    font-size: larger;
 }
 
 .header {
     grid-column: 2 / 3;
     padding: 10px;
-    box-shadow: 10px 100px #000000;
+    box-shadow: 0px 2px #aca7a7;
     background-color: white;
 }
 
@@ -82,6 +84,10 @@ body {
     flex: 1;
     justify-content: end;
     font-weight: bold;
+}
+
+.profile-div > :hover{
+    cursor: pointer;
 }
 
 .profile-div img {
@@ -133,22 +139,24 @@ body {
     border-radius: 20px;
     color: white;
     border: none;
-    padding: 5px;
+    padding: 10px;
     width: 75px;
     font-weight: bold;
 }
 
 .header-buttons input:hover{
     cursor: pointer;
+    background-color: rgb(39, 125, 172);
 }
 
 .main {
     background-color: rgb(226,232,240);
     padding: 20px;
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 3fr 1fr;
     grid-template-rows: 1fr 1fr;
-    gap: 20px
+    gap: 20px;
+    margin-top: 2px;
 }
 
 .main div {
@@ -161,17 +169,50 @@ body {
     grid-template-rows: 30px auto;
 }  
 
-#projects .content{
+#projects > .content{
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
 }
 
-.content div {
+#projects .content > div:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+.content > div {
     background-color: white;
-    border-radius: 5px;
-    padding: 20px;
+    border-radius: 10px;
+    padding: 20px 20px 10px;
     font-weight: bold;
+    box-shadow: 2px 2px #aca7a7;
+    transition: 0.3s;
+    border-left: solid rgb(240,179,41) 5px;
+    display: grid;
+    grid-row: repeat(auto-fit, minmax(10px, 1fr));
+}
+
+.content > div > div {
+    font-weight: normal;
+    color: gray;
+}
+
+.content > div > div ~ div {
+    color: black;
+    display: flex;
+    align-content: end;
+    justify-content: end;
+    gap: 15px;
+}
+
+
+.content > div > div ~ div > span{
+    transition: 0.3s;
+}
+
+.content > div > div ~ div > span:hover {
+    transform: scale(1.1);
+    color:rgb(109, 109, 109)
 }
 
 .main #announcements {
@@ -179,7 +220,31 @@ body {
     grid-template-rows: 30px auto;
 }
 
+#announcements .content div, #trending .content div {
+    transition: 0.3s;
+}
+
+#announcements .content > div:hover, #trending .content > div:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
 .main #trending {
     grid-row: 2 / 3;
     grid-template-rows: 30px auto;
+}
+
+.main > #trending > .content > div  {
+    display: grid;
+    grid-template-columns: 60px auto;
+    align-items: center;
+    color: black;
+}
+
+.main > #trending > .content > div > div {
+    color: black;
+}
+
+.content > div img {
+    border-radius: 50%;
 }
